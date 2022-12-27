@@ -1,5 +1,8 @@
-# 子テーマフォルダ内にgulpファイル, package.json, .gitignoreファイルを入れ込んでいるので、vscodeで子テーマフォルダのみ開けば npx gulpでdart-sassをcssにコンパイル出来るので 作業自体はしやすい！
-## 本番環境にアップする際は、子テーマフォルダから node_modules、package.json, package-lock.json, git-ignoreなどを取り除くことを忘れずに！！（データの容量が大きすぎてAll-in-One WP Migrationでインポート出来ない）
+# 子テーマフォルダ内にgulpファイル, package.json, .gitignoreファイルを入れ込んでいるので、
+vscodeで子テーマフォルダのみ開けば npx gulpでdart-sassをcssにコンパイル出来るので 作業自体はしやすい！
+
+## 本番環境にアップする際は、子テーマフォルダから node_modules、package.json, package-lock.json, git-ignoreなどを取り除くことを忘れずに！！
+（データの容量が大きすぎてAll-in-One WP Migrationでインポート出来ない）
 
 # 【DartSass】Gulp環境
 # FLOCSS設計（スマホファースト）
