@@ -1,0 +1,471 @@
+body {
+	font-family: "lato", "Noto Sans JP", sans-serif; /* --- ドロワーメニュー表示時背景スクロール禁止 --- */
+}
+
+body.is-open {
+	overflow: hidden;
+}
+
+/* リキッドレイアウト対応 */
+
+html {
+	font-size: 16px;
+}
+
+/* pcの電話番号発信対応 */
+
+/* ホバー */
+
+a {
+	text-decoration: none;
+	color: inherit;
+	-webkit-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+*,
+*::before,
+*::after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* Remove default padding */
+
+ul,
+ol {
+	padding: 0;
+}
+
+/* Remove default margin */
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Set core root defaults */
+
+html {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+
+ul,
+ol {
+	list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+
+img {
+	max-width: 100%;
+	display: block;
+	width: 100%;
+}
+
+/* Inherit fonts for inputs and buttons */
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Blur images when they have no alt attribute */
+
+/* フォームリセット */
+
+input,
+button,
+select,
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+	border-radius: 0;
+	font: inherit;
+	outline: none;
+}
+
+textarea {
+	resize: vertical;
+}
+
+input[type=checkbox],
+input[type=radio] {
+	display: none;
+}
+
+input[type=submit],
+input[type=button],
+label,
+button,
+select {
+	cursor: pointer;
+}
+
+select::-ms-expand {
+	display: none;
+}
+
+.l-inner {
+	max-width: 540px;
+	max-width: 33.75rem;
+	width: 100%;
+	height: inherit;
+	padding-right: 20px;
+	padding-left: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.c-red {
+	color: red;
+}
+
+.c-tag {
+	display: inline-block;
+	font-size: 12px;
+	font-size: 0.75rem;
+	font-weight: 400;
+	line-height: 1;
+	padding: 5px 8px;
+	padding: 0.3125rem 0.5rem;
+	border-radius: 0.625rem;
+}
+
+.p-about__img {
+	position: relative;
+	width: 100%;
+}
+
+.p-about__img::before {
+	content: "";
+	display: block;
+	padding-top: 74.029%; /* --- タブレット以降は非表示 --- */
+}
+
+.p-about__img img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-o-object-position: center;
+	object-position: center;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.p-about__body {
+	margin-top: 36px;
+	margin-top: 2.25rem;
+	background-color: #ffffff;
+}
+
+/* --- aos.jsでspとtablet~のアニメーションを変える --- */
+
+.p-about__body[data-aos=new-animation] {
+	opacity: 0;
+	-webkit-transform: translate(0, 100px);
+	transform: translate(0, 100px);
+}
+
+.p-about__body[data-aos=new-animation].aos-animate {
+	opacity: 1;
+	-webkit-transform: translate(0);
+	transform: translate(0);
+	-webkit-transition: 0.7s;
+	transition: 0.7s;
+}
+
+.p-about__description {
+	margin-top: 17px;
+	margin-top: 1.0625rem;
+}
+
+.p-about__btn {
+	margin-top: 29px;
+	margin-top: 1.8125rem;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-font-feature-settings: "palt";
+	font-feature-settings: "palt";
+}
+
+/* --- コンポーネント上書き --- */
+
+.p-about__btn a .c-btn__icon {
+	margin-left: 23px;
+	margin-left: 1.4375rem;
+}
+
+.p-about__pc-img { /* --- sp時非表示 --- */
+	display: none;
+}
+
+.p-about__pc-img::before {
+	content: "";
+	display: block;
+	padding-top: 29.4117%;
+}
+
+.p-about__pc-img img {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-o-object-position: center;
+	object-position: center;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+
+.p-test {
+	font-size: 100px;
+	font-size: 6.25rem;
+	color: #191919;
+	font-weight: 700;
+}
+
+body {
+	background-color: red;
+}
+
+/* --- タブレットサイズでブロックになり改行する --- */
+
+.u-block-tab {
+	display: inline;
+}
+
+/* --- タブレット小サイズでインラインブロックになり改行させない --- */
+
+.u-inline-sm-tab {
+	display: block;
+}
+
+/* --- タブレットサイズでインラインブロックになり改行させない --- */
+
+.u-inline-tab {
+	display: block;
+}
+
+/* --- タブレットサイズ大でインラインブロックになり改行させない --- */
+
+.u-inline-tab-large {
+	display: block;
+}
+
+/* --- pcサイズでインラインブロックになり改行させない --- */
+
+.u-inline-pc {
+	display: block;
+}
+
+/* --- sp, pc時の表示・非表示（主にbrタグ） --- */
+
+.u-sp-only {
+	display: block;
+}
+
+.u-pc-only {
+	display: none;
+}
+
+.u-lg-pc-only {
+	display: none;
+}
+
+/* --- スマホ時は非表示でタブレット以上だと表示される --- */
+
+.u-show-tab {
+	display: none;
+}
+
+/* --- 外部ライブラリを上書きする用のファイルが入っているフォルダ --- */
+
+@media (any-hover: hover) {
+
+a:hover,
+a:focus {
+	opacity: 0.7;
+	-webkit-transition: opacity 0.3s linear;
+	transition: opacity 0.3s linear;
+}
+
+}
+
+@media screen and (min-width: 375px) {
+
+.u-inline-sm-tab {
+	display: inline;
+}
+
+}
+
+@media screen and (min-width: 768px) {
+
+html {
+	font-size: 1.5763546798vw;
+}
+
+a[href^="tel:"] {
+	pointer-events: none;
+}
+
+.l-inner {
+	max-width: 1095px;
+	padding-right: 40px;
+	padding-left: 40px;
+}
+
+.c-tag {
+	padding: 0.4375rem 1rem;
+	border-radius: 0.3125rem;
+}
+
+.p-about {
+	background-image: url(../images/common/bg-about.jpg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+.p-about__img::before {
+	display: none;
+}
+
+.p-about__body {
+	max-width: 31.5625rem;
+	width: 100%;
+	margin-top: 0;
+	padding: 2.5rem 3.125rem 2.875rem;
+}
+
+.p-about__body[data-aos=new-animation] {
+	-webkit-transform: translate(30vw, 0);
+	transform: translate(30vw, 0);
+}
+
+.p-about__body[data-aos=new-animation].aos-animate {
+	-webkit-transition: 1.5s ease-out;
+	transition: 1.5s ease-out;
+}
+
+.p-about__description {
+	margin-top: 1.5rem;
+	word-wrap: break-word;
+	word-break: keep-all;
+}
+
+.p-about__btn {
+	margin-top: 2.3125rem;
+	margin-left: 0;
+	margin-right: 0;
+	-webkit-font-feature-settings: initial;
+	font-feature-settings: initial;
+}
+
+.p-about__pc-img {
+	display: block;
+	position: relative;
+	width: 100%;
+	margin-top: 2rem;
+}
+
+.u-block-tab {
+	display: block;
+}
+
+.u-inline-tab {
+	display: inline;
+}
+
+.u-sp-only {
+	display: none;
+}
+
+.u-pc-only {
+	display: block;
+}
+
+.u-show-tab {
+	display: block;
+}
+
+}
+
+@media (min-width: 1015px) {
+
+html {
+	font-size: 16px;
+}
+
+}
+
+@media screen and (min-width: 1024px) {
+
+.u-inline-tab-large {
+	display: inline;
+}
+
+.u-lg-pc-only {
+	display: block;
+}
+
+}
+
+@media screen and (min-width: 1366px) {
+
+.u-inline-pc {
+	display: inline;
+}
+
+}
+
+@media (max-width: 375px) {
+
+html {
+	font-size: 4.2666666667vw;
+}
+
+}
+
+
+/*# sourceMappingURL=original-top.css.map */

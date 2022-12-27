@@ -1,0 +1,9 @@
+@use "global" as *;
+.p-test {
+  font-size: rem(100);
+  color: $black;
+  font-weight: $bold;
+}
+body {
+  background-color: $red;
+}
