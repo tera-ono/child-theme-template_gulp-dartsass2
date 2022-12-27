@@ -1,67 +1,33 @@
-# Lightning G3 子テーマサンプル
+# 子テーマフォルダ内にgulpファイル, package.json, .gitignoreファイルを入れ込んでいるので、vscodeで子テーマフォルダのみ開けば npx gulpでdart-sassをcssにコンパイル出来るので 作業自体はしやすい！
+## 本番環境にアップする際は、子テーマフォルダから node_modules、package.json, package-lock.json, git-ignoreなどを取り除くことを忘れずに！！（データの容量が大きすぎてAll-in-One WP Migrationでインポート出来ない）
 
-カスタマイズの方法については以下で順次公開しています
+# 【DartSass】Gulp環境
+# FLOCSS設計（スマホファースト）
+# WordPress仕様
+# 子テーマでdart-sassでCSSコンパイルが出来ます
+## Lightningの子テーマの仕様だが、基本的には応用できると思う
 
-https://training.vektor-inc.co.jp/courses/lightning-customize/
+## 環境
+- Gulpが使える環境が前提（4系）
+- Nodeはバージョン14以降
 
-## CSSのビルド
+## 使い方
+- ダウンロードしたフォルダを開く
+- wp-content → themesフォルダに child-theme-template_gulp-dartsass2 フォルダ内の WordPressテーマフォルダを入れ込む
+-  テーマフォルダを入れ込み WordPress管理画面でテーマフォルダを入れ込み有効にする
+- ターミナルを開き、 npm i とコマンドを入力
+- node_modulesとpackage-lock.jsonが生成されるのを確認する
+- 「 npx gulp 」とコマンドを入力すると動き出します
 
-※ 普段からsassのコンパイルをしている人向けの説明です
+## 仕様
+- sassの記述はsassの中で行う
+- 画像はassetフォルダのimagesの中に格納する（圧縮していないです、ワードプレスのプラグインで圧縮予定）
+- コンパイルされたCSSは第一階層のCSSフォルダの中に出力されます。
+- jsに関する記述は第一階層のjsフォルダの中で行ってください。特に圧縮等は行っていません。
 
-パッケージのインストール
-
-```
-npm install
-```
-
-assets/_scss/ ディレクトリの監視・コンパイル
-
-```
-npm run watch
-```
-
----
-
-## wp-env（開発者向け）
-
-一応 .wp-env.json が置いてあります。
-
-Docker が動作している状態で、
-
-### wp-env をインストール
-
-```
-npm -g i @wordpress/env
-```
-
-### wp-env を起動
-
- ```
- wp-env start
- ```
-
-詳しくは下記を参照ください。
-
-https://ja.wordpress.org/team/handbook/block-editor/reference-guides/packages/packages-env/
-
----
-
-## PHPUnit test（開発者向け）
-
-```
-composer install
-wp-env start
-npm run phpunit
-```
-
-※ ディレクトリ名・ファイル名を変更した場合は package.json 及び tests/bootstrap.php にディレクトリ名・ファイル名の記述があるので変更してください。
-
-## Dist （開発者向け）
-
-以下のコマンドで dist/lightning-child-sample/ に node_modules を覗いたファイルが複製されます。 
-
-```
-npm run dist
-```
-
-出力先のフォルダ名を変更したい場合は package.json の dist/lightning-child-sample/ の記述を変更してください。
+## 備考
+- スマホファーストが前提の仕様です。
+- rem記述を前提としています。
+- ルートフォントをvwで設定していることからPCサイズのレイアウトをタブレットで表示させることが出来ます（remで書いた場合のみ）。
+# dartsass-gulp-flocss-WordPress
+# dartsass-gulp-flocss_wordpress
